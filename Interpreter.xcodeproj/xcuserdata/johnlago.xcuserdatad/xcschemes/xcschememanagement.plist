@@ -7,7 +7,50 @@
 		<key>Interpreter.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>InterpreterFW.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>InterpreterTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TokenTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>13E02A1E2341ACBE00C6746B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>13E02A432343065500C6746B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>13E02A512343072500C6746B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>13E02A592343072500C6746B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>13E1A94B233EFB5400011277</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

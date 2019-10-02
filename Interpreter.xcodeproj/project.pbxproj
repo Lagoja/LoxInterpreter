@@ -7,8 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13E1A950233EFB5400011277 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1A94F233EFB5400011277 /* main.swift */; };
+		13E02A5B2343072500C6746B /* InterpreterFW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E02A522343072500C6746B /* InterpreterFW.framework */; };
+		13E02A602343072500C6746B /* InterpreterFWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A5F2343072500C6746B /* InterpreterFWTests.swift */; };
+		13E02A622343072500C6746B /* InterpreterFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E02A542343072500C6746B /* InterpreterFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13E02A692343073800C6746B /* TokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A382341B17200C6746B /* TokenTest.swift */; };
+		13E02A6A2343073800C6746B /* ScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A212341ACBE00C6746B /* ScannerTests.swift */; };
+		13E02A6B2343074A00C6746B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A1423418BFE00C6746B /* Token.swift */; };
+		13E02A6C2343074A00C6746B /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A12234188F200C6746B /* TokenType.swift */; };
+		13E02A6D2343074A00C6746B /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A162341902F00C6746B /* Scanner.swift */; };
+		13E02A6E2343074A00C6746B /* Lox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1A94F233EFB5400011277 /* Lox.swift */; };
+		13E1A9572341738600011277 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1A9562341738600011277 /* main.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13E02A5C2343072500C6746B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13E1A944233EFB5400011277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13E02A512343072500C6746B;
+			remoteInfo = InterpreterFW;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		13E1A94A233EFB5400011277 /* CopyFiles */ = {
@@ -23,11 +42,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13E02A12234188F200C6746B /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
+		13E02A1423418BFE00C6746B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		13E02A162341902F00C6746B /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		13E02A212341ACBE00C6746B /* ScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerTests.swift; sourceTree = "<group>"; };
+		13E02A382341B17200C6746B /* TokenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTest.swift; sourceTree = "<group>"; };
+		13E02A522343072500C6746B /* InterpreterFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InterpreterFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E02A542343072500C6746B /* InterpreterFW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterpreterFW.h; sourceTree = "<group>"; };
+		13E02A552343072500C6746B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13E02A5A2343072500C6746B /* InterpreterFWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterpreterFWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E02A5F2343072500C6746B /* InterpreterFWTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpreterFWTests.swift; sourceTree = "<group>"; };
+		13E02A612343072500C6746B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13E1A94C233EFB5400011277 /* Interpreter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Interpreter; sourceTree = BUILT_PRODUCTS_DIR; };
-		13E1A94F233EFB5400011277 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		13E1A94F233EFB5400011277 /* Lox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lox.swift; sourceTree = "<group>"; };
+		13E1A9562341738600011277 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		13E02A4F2343072500C6746B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E02A572343072500C6746B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E02A5B2343072500C6746B /* InterpreterFW.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13E1A949233EFB5400011277 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +84,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13E02A532343072500C6746B /* InterpreterFW */ = {
+			isa = PBXGroup;
+			children = (
+				13E1A94F233EFB5400011277 /* Lox.swift */,
+				13E02A12234188F200C6746B /* TokenType.swift */,
+				13E02A1423418BFE00C6746B /* Token.swift */,
+				13E02A162341902F00C6746B /* Scanner.swift */,
+				13E02A542343072500C6746B /* InterpreterFW.h */,
+				13E02A552343072500C6746B /* Info.plist */,
+			);
+			path = InterpreterFW;
+			sourceTree = "<group>";
+		};
+		13E02A5E2343072500C6746B /* InterpreterFWTests */ = {
+			isa = PBXGroup;
+			children = (
+				13E02A382341B17200C6746B /* TokenTest.swift */,
+				13E02A212341ACBE00C6746B /* ScannerTests.swift */,
+				13E02A5F2343072500C6746B /* InterpreterFWTests.swift */,
+				13E02A612343072500C6746B /* Info.plist */,
+			);
+			path = InterpreterFWTests;
+			sourceTree = "<group>";
+		};
 		13E1A943233EFB5400011277 = {
 			isa = PBXGroup;
 			children = (
 				13E1A94E233EFB5400011277 /* Interpreter */,
+				13E02A532343072500C6746B /* InterpreterFW */,
+				13E02A5E2343072500C6746B /* InterpreterFWTests */,
 				13E1A94D233EFB5400011277 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				13E1A94C233EFB5400011277 /* Interpreter */,
+				13E02A522343072500C6746B /* InterpreterFW.framework */,
+				13E02A5A2343072500C6746B /* InterpreterFWTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,14 +131,61 @@
 		13E1A94E233EFB5400011277 /* Interpreter */ = {
 			isa = PBXGroup;
 			children = (
-				13E1A94F233EFB5400011277 /* main.swift */,
+				13E1A9562341738600011277 /* main.swift */,
 			);
 			path = Interpreter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		13E02A4D2343072500C6746B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E02A622343072500C6746B /* InterpreterFW.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		13E02A512343072500C6746B /* InterpreterFW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E02A632343072500C6746B /* Build configuration list for PBXNativeTarget "InterpreterFW" */;
+			buildPhases = (
+				13E02A4D2343072500C6746B /* Headers */,
+				13E02A4E2343072500C6746B /* Sources */,
+				13E02A4F2343072500C6746B /* Frameworks */,
+				13E02A502343072500C6746B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InterpreterFW;
+			productName = InterpreterFW;
+			productReference = 13E02A522343072500C6746B /* InterpreterFW.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		13E02A592343072500C6746B /* InterpreterFWTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13E02A662343072500C6746B /* Build configuration list for PBXNativeTarget "InterpreterFWTests" */;
+			buildPhases = (
+				13E02A562343072500C6746B /* Sources */,
+				13E02A572343072500C6746B /* Frameworks */,
+				13E02A582343072500C6746B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13E02A5D2343072500C6746B /* PBXTargetDependency */,
+			);
+			name = InterpreterFWTests;
+			productName = InterpreterFWTests;
+			productReference = 13E02A5A2343072500C6746B /* InterpreterFWTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		13E1A94B233EFB5400011277 /* Interpreter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13E1A953233EFB5400011277 /* Build configuration list for PBXNativeTarget "Interpreter" */;
@@ -92,6 +213,12 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "John Lago";
 				TargetAttributes = {
+					13E02A512343072500C6746B = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					13E02A592343072500C6746B = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					13E1A94B233EFB5400011277 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -111,22 +238,162 @@
 			projectRoot = "";
 			targets = (
 				13E1A94B233EFB5400011277 /* Interpreter */,
+				13E02A512343072500C6746B /* InterpreterFW */,
+				13E02A592343072500C6746B /* InterpreterFWTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		13E02A502343072500C6746B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E02A582343072500C6746B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		13E02A4E2343072500C6746B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E02A6B2343074A00C6746B /* Token.swift in Sources */,
+				13E02A6D2343074A00C6746B /* Scanner.swift in Sources */,
+				13E02A6C2343074A00C6746B /* TokenType.swift in Sources */,
+				13E02A6E2343074A00C6746B /* Lox.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13E02A562343072500C6746B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13E02A6A2343073800C6746B /* ScannerTests.swift in Sources */,
+				13E02A602343072500C6746B /* InterpreterFWTests.swift in Sources */,
+				13E02A692343073800C6746B /* TokenTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13E1A948233EFB5400011277 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E1A950233EFB5400011277 /* main.swift in Sources */,
+				13E1A9572341738600011277 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		13E02A5D2343072500C6746B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13E02A512343072500C6746B /* InterpreterFW */;
+			targetProxy = 13E02A5C2343072500C6746B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		13E02A642343072500C6746B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7TU6673R44;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InterpreterFW/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lagoja.InterpreterFW;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		13E02A652343072500C6746B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7TU6673R44;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = InterpreterFW/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lagoja.InterpreterFW;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		13E02A672343072500C6746B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7TU6673R44;
+				INFOPLIST_FILE = InterpreterFWTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lagoja.InterpreterFWTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		13E02A682343072500C6746B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7TU6673R44;
+				INFOPLIST_FILE = InterpreterFWTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lagoja.InterpreterFWTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		13E1A951233EFB5400011277 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -243,6 +510,7 @@
 		13E1A954233EFB5400011277 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TU6673R44;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -265,6 +533,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		13E02A632343072500C6746B /* Build configuration list for PBXNativeTarget "InterpreterFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E02A642343072500C6746B /* Debug */,
+				13E02A652343072500C6746B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13E02A662343072500C6746B /* Build configuration list for PBXNativeTarget "InterpreterFWTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E02A672343072500C6746B /* Debug */,
+				13E02A682343072500C6746B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		13E1A947233EFB5400011277 /* Build configuration list for PBXProject "Interpreter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
