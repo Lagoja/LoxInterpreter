@@ -54,6 +54,75 @@ class InterpreterTests: XCTestCase {
         XCTAssertEqual(slsh.lexeme, "/", "Token Lexeme Incorrect")
     }
 
+    func testComment(){
+        // Scanner should skip initial commented line and only tokenize the second line
+
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "//Hello \n +")
+        let tokens = scanner.scanTokens()
+        let strToken = tokens[0]
+
+        XCTAssertEqual(strToken.type, TokenType.PLUS , "Token Type Incorrect")
+        XCTAssertEqual(strToken.line, 1, "Token Line Incorrect")
+        XCTAssertEqual(strToken.lexeme, "+", "Token Lexeme Incorrect")
+
+
+    }
+
+    func testString(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "\"Hello\"")
+        let tokens = scanner.scanTokens()
+        let strToken = tokens[0]
+
+        XCTAssertEqual(strToken.type, TokenType.STRING, "TokenType Incorrect")
+        XCTAssertEqual(strToken.line, 0, "Token Line Incorrect")
+        print(strToken.lexeme)
+        XCTAssertEqual(strToken.literal as! String, "Hello", "Token Literal Incorrect")
+        XCTAssertEqual(strToken.lexeme, "\"Hello\"", "Token Lexeme Incorrect")
+    }
+
+    func testMultiLineString(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "\"Hello\nThere\"")
+        let tokens = scanner.scanTokens()
+        let strToken = tokens[0]
+
+        XCTAssertEqual(strToken.type, TokenType.STRING, "TokenType Incorrect")
+        XCTAssertEqual(strToken.line, 1, "Token Line Incorrect")
+        print(strToken.lexeme)
+        XCTAssertEqual(strToken.literal as! String, "Hello\nThere", "Token Literal Incorrect")
+        XCTAssertEqual(strToken.lexeme, "\"Hello\nThere\"", "Token Lexeme Incorrect")
+    }
+
+    func testUnterminatedString(){
+        // Unterminated string should be skipped, return EOF
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "\"Hello")
+        let tokens = scanner.scanTokens()
+        let strToken = tokens[0]
+
+        XCTAssertEqual(strToken.type, TokenType.EOF, "TokenType Incorrect")
+    }
+
+    func testInteger(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "1234")
+        let tokens = scanner.scanTokens()
+        let intToken = tokens[0]
+
+        XCTAssertEqual(intToken.type, TokenType.NUMBER, "TokenType Incorrect")
+        XCTAssertEqual(intToken.literal as! Float, 1234, "Token Literal Incorrect")
+        XCTAssertEqual(intToken.lexeme, "1234", "Token Lexeme Incorrect")
+        XCTAssertEqual(intToken.line, 0, "Token Line Incorrect")
+    }
+
+    func testDecimal(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "12.34")
+        let tokens = scanner.scanTokens()
+        let decToken = tokens[0]
+
+        XCTAssertEqual(decToken.type, TokenType.NUMBER, "TokenType Incorrect")
+        XCTAssertEqual(decToken.literal as! Float, 12.34, "Token Literal Incorrect")
+        XCTAssertEqual(decToken.lexeme, "12.34", "Token Lexeme Incorrect")
+        XCTAssertEqual(decToken.line, 0, "Token Line Incorrect")
+    }
+
     func testPerformanceExample() {
         // This is  example of a performance test case.
         measure {
