@@ -20,25 +20,25 @@ class Scanner {
     private var start = 0
     private var current = 0
     private var line = 0
-
+    
     init(source: String){
         self.source = source
     }
-
+    
     func scanTokens() -> [Token] {
         while (!isAtEnd()){
             start = current
             scanToken();
         }
-
-        tokens.append(Token(type: .EOF, lexeme: "", literal: nil, line: line))
+        
+        tokens.append(Token(type: .EOF, lexeme: "", literal: Literal.None, line: line))
         return tokens
     }
-
+    
     private func isAtEnd() -> Bool {
         return current >= source.count
     }
-
+    
     private func scanToken() {
         let c: Character = advance()
         switch(c) {
@@ -96,91 +96,93 @@ class Scanner {
                     identifier()
                 } else { Lox.error(line: line, message: "Unexpected character") }
         }
-        
-
     }
-
-    private func string() {
-        while (peek() != "\"" && !isAtEnd()) {
-            if (peek() == "\n") {line += 1}
-            advance()
-        }
-
-        if (isAtEnd()) {
-            Lox.error(line: line, message: "Unterminated string")
-            return
-        }
-
-        advance();
-
-        let startIndex = source.index(source.startIndex, offsetBy: start+1)
-        let endIndex = source.index(source.startIndex, offsetBy: current-1)
-
-        let value = source[startIndex..<endIndex]
-
-        addToken(type: .STRING, literal: value as AnyObject);
-    }
-
+    
     private func match(expected: Character) -> Bool {
         if (isAtEnd()) { return false};
         let matchIndex = source.index(source.startIndex, offsetBy: current)
         if (source[matchIndex] != expected) {return false}
-
+        
         current += 1
         return true
     }
-
-    private func addToken(type: TokenType){
-        addToken(type: type, literal: nil)
-    }
-
+    
     private func peek() -> Character {
         if (isAtEnd()) {return "\0"}
         let peekIndex = source.index(source.startIndex, offsetBy: current)
         return source[peekIndex]
     }
-
+    
     private func peekNext() -> Character{
         if (current + 1) >= source.count { return "\0"}
         let peekIndex = source.index(source.startIndex, offsetBy: current + 1)
         return source[peekIndex]
     }
-
-    private func addToken(type: TokenType, literal: AnyObject?) {
+    
+    private func addToken(type: TokenType){
+        addToken(type: type, literal: Literal.None)
+    }
+    
+    private func addToken(type: TokenType, literal: Literal) {
         let tokenRange = source.index(source.startIndex, offsetBy: start)..<source.index(source.startIndex, offsetBy: current)
-
+        
         let text = source[tokenRange]
 
         tokens.append(Token(type: type, lexeme: String(text), literal: literal, line: line))
     }
-
+    
     private func isDigit(char: Character) -> Bool {
         return (char >= "0") && (char <= "9")
     }
-
+    
     private func isAlpha(char: Character) -> Bool {
         return (char >= "a" && char <= "z") ||
-        (char >= "A" && char <= "Z") ||
-         char == " "
+            (char >= "A" && char <= "Z") ||
+            char == " "
     }
-
+    
+    private func string() {
+        while (peek() != "\"" && !isAtEnd()) {
+            if (peek() == "\n") {line += 1}
+            advance()
+        }
+        
+        if (isAtEnd()) {
+            Lox.error(line: line, message: "Unterminated string")
+            return
+        }
+        
+        advance();
+        
+        let startIndex = source.index(source.startIndex, offsetBy: start+1)
+        let endIndex = source.index(source.startIndex, offsetBy: current-1)
+        
+        let value = String(source[startIndex..<endIndex])
+        addToken(type: .STRING, literal: Literal.String(value))
+    }
+    
     private func number() {
         while isDigit(char: peek()) {advance()}
-
+        
         if (peek() == "." && isDigit(char: peekNext())) {
             advance()
             while isDigit(char: (peek())) {
                 advance()
             }
         }
-
+        
         let tokenRange = source.index(source.startIndex, offsetBy: start)..<source.index(source.startIndex, offsetBy: current)
-
-        let value = source[tokenRange]
-
-        addToken(type: .NUMBER, literal: Float(value) as AnyObject)
+        
+        if let value = Float(source[tokenRange]){
+            
+            addToken(type: .NUMBER, literal: Literal.Number(value))
+        }
     }
-
+    
+    private func identifier() {
+        
+    }
+    
     private func advance() -> Character{
         current += 1
         let newIndex = source.index(source.startIndex, offsetBy: current-1)

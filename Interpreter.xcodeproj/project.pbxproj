@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13CA09F22348F4950082E037 /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CA09F12348F4950082E037 /* Literal.swift */; };
 		13E02A5B2343072500C6746B /* InterpreterFW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E02A522343072500C6746B /* InterpreterFW.framework */; };
 		13E02A602343072500C6746B /* InterpreterFWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E02A5F2343072500C6746B /* InterpreterFWTests.swift */; };
 		13E02A622343072500C6746B /* InterpreterFW.h in Headers */ = {isa = PBXBuildFile; fileRef = 13E02A542343072500C6746B /* InterpreterFW.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13CA09F12348F4950082E037 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 		13E02A12234188F200C6746B /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		13E02A1423418BFE00C6746B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		13E02A162341902F00C6746B /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				13E02A162341902F00C6746B /* Scanner.swift */,
 				13E02A542343072500C6746B /* InterpreterFW.h */,
 				13E02A552343072500C6746B /* Info.plist */,
+				13CA09F12348F4950082E037 /* Literal.swift */,
 			);
 			path = InterpreterFW;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13CA09F22348F4950082E037 /* Literal.swift in Sources */,
 				13E02A6B2343074A00C6746B /* Token.swift in Sources */,
 				13E02A6D2343074A00C6746B /* Scanner.swift in Sources */,
 				13E02A6C2343074A00C6746B /* TokenType.swift in Sources */,

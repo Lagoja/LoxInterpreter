@@ -31,6 +31,7 @@ class InterpreterTests: XCTestCase {
         let token = tokens[0]
         XCTAssertEqual(token.type, TokenType.PLUS , "Token Type Incorrect")
         XCTAssertEqual(token.line, 0, "Token Line Incorrect")
+        XCTAssertEqual(token.literal, Literal.None, "Token Literal Incorrect")
         XCTAssertEqual(token.lexeme, "+", "Token Lexeme Incorrect")
     }
 
@@ -64,8 +65,6 @@ class InterpreterTests: XCTestCase {
         XCTAssertEqual(strToken.type, TokenType.PLUS , "Token Type Incorrect")
         XCTAssertEqual(strToken.line, 1, "Token Line Incorrect")
         XCTAssertEqual(strToken.lexeme, "+", "Token Lexeme Incorrect")
-
-
     }
 
     func testString(){
@@ -75,8 +74,7 @@ class InterpreterTests: XCTestCase {
 
         XCTAssertEqual(strToken.type, TokenType.STRING, "TokenType Incorrect")
         XCTAssertEqual(strToken.line, 0, "Token Line Incorrect")
-        print(strToken.lexeme)
-        XCTAssertEqual(strToken.literal as! String, "Hello", "Token Literal Incorrect")
+        XCTAssertEqual(strToken.literal, Literal.String("Hello"), "Token Literal Incorrect")
         XCTAssertEqual(strToken.lexeme, "\"Hello\"", "Token Lexeme Incorrect")
     }
 
@@ -88,7 +86,7 @@ class InterpreterTests: XCTestCase {
         XCTAssertEqual(strToken.type, TokenType.STRING, "TokenType Incorrect")
         XCTAssertEqual(strToken.line, 1, "Token Line Incorrect")
         print(strToken.lexeme)
-        XCTAssertEqual(strToken.literal as! String, "Hello\nThere", "Token Literal Incorrect")
+        XCTAssertEqual(strToken.literal, Literal.String("Hello\nThere"), "Token Literal Incorrect")
         XCTAssertEqual(strToken.lexeme, "\"Hello\nThere\"", "Token Lexeme Incorrect")
     }
 
@@ -107,7 +105,7 @@ class InterpreterTests: XCTestCase {
         let intToken = tokens[0]
 
         XCTAssertEqual(intToken.type, TokenType.NUMBER, "TokenType Incorrect")
-        XCTAssertEqual(intToken.literal as! Float, 1234, "Token Literal Incorrect")
+        XCTAssertEqual(intToken.literal, Literal.Number(1234), "Token Literal Incorrect")
         XCTAssertEqual(intToken.lexeme, "1234", "Token Lexeme Incorrect")
         XCTAssertEqual(intToken.line, 0, "Token Line Incorrect")
     }
@@ -118,7 +116,7 @@ class InterpreterTests: XCTestCase {
         let decToken = tokens[0]
 
         XCTAssertEqual(decToken.type, TokenType.NUMBER, "TokenType Incorrect")
-        XCTAssertEqual(decToken.literal as! Float, 12.34, "Token Literal Incorrect")
+        XCTAssertEqual(decToken.literal, Literal.Number(12.34), "Token Literal Incorrect")
         XCTAssertEqual(decToken.lexeme, "12.34", "Token Lexeme Incorrect")
         XCTAssertEqual(decToken.line, 0, "Token Line Incorrect")
     }

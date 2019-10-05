@@ -11,12 +11,12 @@ import Foundation
 class Token {
     let type: TokenType
     let lexeme: String
-    let literal: AnyObject?
+    let literal: Literal
     let line: Int
 
     init(type: TokenType,
          lexeme: String,
-         literal: AnyObject?,
+         literal: Literal,
          line: Int) {
 
         self.type = type
@@ -26,6 +26,6 @@ class Token {
     }
 
     func toString() -> String {
-        return "\(type) \(lexeme) \(literal!)"
+        return "\(type) \(lexeme) \(literal)"
     }
 }
