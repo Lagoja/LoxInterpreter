@@ -8,7 +8,6 @@
 
 /*
  Things I don't like about this
- 1. Several places where I advance but ignore the result.
  2. A lot of void functions that mutate a central state, would prefer something more functional
  */
 
@@ -74,7 +73,7 @@ class Scanner {
                 // Consume all characters in the line and discard them.
                 if (match(expected: "/")) {
                     while (peek() != "\n" && !isAtEnd()) {
-                        advance()
+                        skip()
                     }
                 } else {
                     addToken(type: .SLASH)
@@ -144,7 +143,7 @@ class Scanner {
     private func string() {
         while (peek() != "\"" && !isAtEnd()) {
             if (peek() == "\n") {line += 1}
-            advance()
+            skip()
         }
         
         if (isAtEnd()) {
@@ -152,7 +151,7 @@ class Scanner {
             return
         }
         
-        advance();
+        skip();
         
         let startIndex = source.index(source.startIndex, offsetBy: start+1)
         let endIndex = source.index(source.startIndex, offsetBy: current-1)
@@ -162,12 +161,12 @@ class Scanner {
     }
     
     private func number() {
-        while isDigit(char: peek()) {advance()}
+        while isDigit(char: peek()) {skip()}
         
         if (peek() == "." && isDigit(char: peekNext())) {
-            advance()
+            skip()
             while isDigit(char: (peek())) {
-                advance()
+                skip()
             }
         }
         
@@ -182,9 +181,13 @@ class Scanner {
     private func identifier() {
         
     }
+
+    private func skip() {
+        current += 1
+    }
     
     private func advance() -> Character{
-        current += 1
+        skip()
         let newIndex = source.index(source.startIndex, offsetBy: current-1)
         return source[newIndex] as Character
     }

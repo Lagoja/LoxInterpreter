@@ -11,23 +11,18 @@ import XCTest
 
 class InterpreterTests: XCTestCase {
 
-    var scanner: InterpreterFW.Scanner!
-    var tokens: [Token] = []
-
     override func setUp() {
 
         super.setUp()
-        scanner = Scanner(source: "+ <= >= /\n ")
-        tokens = scanner.scanTokens()
     }
 
     override func tearDown() {
         super.tearDown()
-        scanner = nil
-        tokens = []
     }
 
     func testScanSingleToken() {
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "+ <= >= /\n ")
+        let tokens = scanner.scanTokens()
         let token = tokens[0]
         XCTAssertEqual(token.type, TokenType.PLUS , "Token Type Incorrect")
         XCTAssertEqual(token.line, 0, "Token Line Incorrect")
@@ -36,22 +31,30 @@ class InterpreterTests: XCTestCase {
     }
 
     func testDoubleToken(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "+ <= >= /\n ")
+        let tokens = scanner.scanTokens()
+
         let lte = tokens[1]
         XCTAssertEqual(lte.type, TokenType.LESS_EQUAL , "Token Type Incorrect")
         XCTAssertEqual(lte.line, 0, "Token Line Incorrect")
+        XCTAssertEqual(lte.literal, Literal.None, "Token Literal Incorrect")
         XCTAssertEqual(lte.lexeme, "<=", "Token Lexeme Incorrect")
 
         let gte = tokens[2]
         XCTAssertEqual(gte.type, TokenType.GREATER_EQUAL , "Token Type Incorrect")
         XCTAssertEqual(gte.line, 0, "Token Line Incorrect")
+        XCTAssertEqual(gte.literal, Literal.None, "Token Literal Incorrect")
         XCTAssertEqual(gte.lexeme, ">=", "Token Lexeme Incorrect")
     }
 
     func testSlash(){
+        let scanner: InterpreterFW.Scanner = InterpreterFW.Scanner(source: "+ <= >= /\n ")
+        let tokens = scanner.scanTokens()
         let slsh = tokens[3]
 
         XCTAssertEqual(slsh.type, TokenType.SLASH , "Token Type Incorrect")
         XCTAssertEqual(slsh.line, 0, "Token Line Incorrect")
+        XCTAssertEqual(slsh.literal, Literal.None, "Token Literal Incorrect")
         XCTAssertEqual(slsh.lexeme, "/", "Token Lexeme Incorrect")
     }
 
@@ -64,6 +67,7 @@ class InterpreterTests: XCTestCase {
 
         XCTAssertEqual(strToken.type, TokenType.PLUS , "Token Type Incorrect")
         XCTAssertEqual(strToken.line, 1, "Token Line Incorrect")
+        XCTAssertEqual(strToken.literal, Literal.None, "Token Literal Incorrect")
         XCTAssertEqual(strToken.lexeme, "+", "Token Lexeme Incorrect")
     }
 
